@@ -47,6 +47,7 @@ Docker provides several advantages for MCP servers:
 - **3 Sequential Thinking Tools**: Dynamic problem-solving, thought revision, branching analysis
 - **Advanced Query Support**: Boolean operators (AND, OR, ANDNOT), field-specific searches, phrase matching
 - **Enhanced Metadata**: Journal references, DOI links, author comments, affiliations, primary categories
+- **Always Includes URLs**: Every paper response includes both ArXiv abstract URL and PDF URL
 - **Version Support**: Access specific versions of papers
 - **Docker-Based**: Containerized deployment for easy setup
 - **Modular Design**: Easy to add new services and tools
