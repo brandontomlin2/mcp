@@ -24,6 +24,11 @@ class ArXivService(BaseService):
             version = arxiv_id.split('v')[-1]
             arxiv_id = arxiv_id.split('v')[0]
         
+        # Create ArXiv abstract URL
+        arxiv_url = f"https://arxiv.org/abs/{arxiv_id}"
+        if version:
+            arxiv_url = f"https://arxiv.org/abs/{arxiv_id}v{version}"
+        
         return PaperInfo(
             arxiv_id=arxiv_id,
             title=result.title,
@@ -33,6 +38,7 @@ class ArXivService(BaseService):
             updated=result.updated.isoformat(),
             categories=result.categories,
             pdf_url=result.pdf_url,
+            arxiv_url=arxiv_url,
             summary=f"{result.title} by {', '.join(author.name for author in result.authors[:3])}{'...' if len(result.authors) > 3 else ''}",
             primary_category=getattr(result, 'primary_category', None),
             journal_ref=getattr(result, 'journal_ref', None),

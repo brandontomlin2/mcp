@@ -16,6 +16,7 @@ class PaperInfo(BaseModel):
     updated: str = Field(..., description="Last updated date")
     categories: List[str] = Field(..., description="ArXiv categories")
     pdf_url: str = Field(..., description="URL to PDF")
+    arxiv_url: str = Field(..., description="URL to ArXiv abstract page")
     summary: str = Field(..., description="Brief summary")
     # Additional fields from ArXiv API
     primary_category: Optional[str] = Field(None, description="Primary ArXiv category")
