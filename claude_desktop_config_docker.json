@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "multi-service": {
+      "command": "mcp/run_mcp_docker.sh",
+      "args": []
+    }
+  }
+}

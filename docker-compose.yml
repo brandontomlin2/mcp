@@ -1,0 +1,20 @@
+# Multi-Service MCP Server Docker Compose
+
+services:
+  multi-service-mcp:
+    build: .
+    container_name: multi-service-mcp-server
+    volumes:
+      # Mount the current directory for development
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    # For MCP, we typically use stdio, but this shows how to expose ports if needed
+    # ports:
+    #   - "8000:8000"
+    # Keep container running for MCP stdio communication
+    stdin_open: true
+    tty: true
+    # Restart policy
+    restart: unless-stopped
